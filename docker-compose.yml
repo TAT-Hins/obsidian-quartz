@@ -1,0 +1,23 @@
+# Choose a name you like for the Quartz project
+name: obsidian-publish-quartz
+
+services:
+  quartz:
+    build:
+      context: ${CODE_DIR:-.}
+      dockerfile: Dockerfile
+      args:
+        VAULT_DIR: ${VAULT_DIR:-./content}
+    image: ${IMAGE_TAG:-quartz:latest}
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    # Config your own network
+    # networks:
+    #   - your_own_network
+    ports:
+      - ${PORT}:8080
+
+# Config external network to connect to other containers (Nginx, Caddy, etc.)
+# networks:
+#   your_own_network:
+#     external: true

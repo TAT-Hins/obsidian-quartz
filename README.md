@@ -1,3 +1,18 @@
+# Usage
+
+- Make sure you have the privilege to run docker command: use root user or `sudo` command
+
+- If you decide to sync the content folder at the same time, please delete the definition in `.gitignore`:
+
+  ```
+  ...
+  .replit
+  replit.nix
+  ~~content/~~
+  ```
+
+---
+
 # Quartz v4
 
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
