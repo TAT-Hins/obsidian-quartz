@@ -1,13 +1,14 @@
 #!/bin/sh
 
-VAULT_DIR='Your Obsidian Vault root folder'
+VAULT_DIR='/volume1/homes/SaLtF1sh/个人资料/Obsidian_Vault/Notes'
 CODE_DIR='.'
-PORT=Your exposed port
-IMAGE_TAG='quartz:latest' # Any image tag you like
-CONTAINER_NAME='quartz'   # Any container name you like
-CLEAN_VAULT=false         # True if preferred to clean the content/ folder and copy the vault from scratch
+PORT=60016
+IMAGE_TAG='quartz:latest'
+CONTAINER_NAME='quartz'
+CLEAN_VAULT=false
 
 clean_vault(){
+    # rm -f ${CODE_DIR}/content/^[?!.gitkeep]*
     find ${CODE_DIR}/content -mindepth 1 -maxdepth 1 ! -name '.gitkeep' -exec rm -rf {} +
 }
 

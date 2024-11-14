@@ -1,4 +1,3 @@
-# Choose a name you like for the Quartz project
 name: obsidian-publish-quartz
 
 services:
@@ -12,12 +11,11 @@ services:
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     # Config your own network
-    # networks:
-    #   - your_own_network
+    networks:
+      - nas
     ports:
       - ${PORT}:8080
 
-# Config external network to connect to other containers (Nginx, Caddy, etc.)
-# networks:
-#   your_own_network:
-#     external: true
+networks:
+  nas:
+    external: true
